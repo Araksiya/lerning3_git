@@ -119,7 +119,7 @@ var i = 0;
 var result;
 var num = +prompt('enter value');
 var quantity = +prompt("how many?"); 
-	for (var i = 1; ++i <= ++quantity; i++) {
+	for (var i = 1; i <= quantity; i++) {
 		console.log(result=num * i);
 	}
 
