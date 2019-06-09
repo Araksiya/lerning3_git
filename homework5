@@ -1,0 +1,126 @@
+/////// скрипт о запросе на угадывание сгенерированного числа c помощью do/ while
+var max = 5,
+      min = 1,
+rand = Math.random() * (max-min) + min,
+rounded = Math.round(rand);
+do {
+    var answer = prompt('Guess a number?');
+    if (answer===null) break;
+} while (+answer!==rounded); 
+ console.log (rounded); 
+
+//////скрипт о запросе на угадывание сгенерированного числа c помощью  while
+var max = 5,
+      min = 1,
+rand = Math.random() * (max-min) + min,
+rounded = Math.round(rand);
+while (+answer!==rounded) {
+    var answer = prompt('Guess a number?');
+    if (answer===null) break;
+}
+console.log (rounded);
+////скрипт о запросе на угадывание сгенерированного числа c помощью for
+var max = 5,
+min = 1,
+rand = Math.random() * (max-min) + min,
+rounded = Math.round(rand);
+for (i = 0;  +answer!==rounded; i++){
+    var answer = prompt('Guess a number?');
+    if (answer===null) break;
+}
+console.log (rounded);
+
+
+
+
+////// итерация числа  c помощью do/ while
+var i = 0;
+do {
+    console.log('Iteration');
+} while (++i < 5 );
+//////итерация числа c помощью while
+var i = 0;
+ while (i++ < 5 ) {
+    console.log('Iteration');
+ }
+//////итерация числа  цикла c помощью for
+var i = 0;
+ for (i = 0; i < 5; i++)
+ console.log('Iteration');
+
+
+
+////////пользователь сам выбирает сколько раз выполняется итерация, прерывание цикла c помощью do/ while
+var iCount  = +prompt('Iteration count')
+
+do {
+    console.log('Iteration');
+    if (iCount===null) break;
+
+} while (--iCount > 0);
+////////пользователь сам выбирает сколько раз выполняется итерация, прерывание цикла c помощью  while
+var iCount  = +prompt('Iteration count')
+
+ while (iCount-- > 0)  {
+        if (iCount===null) break; 
+    
+ console.log('Iteration');
+    }
+ ////////пользователь сам выбирает сколько раз выполняется итерация, прерывание цикла c помощью  for
+ var iCount  = +prompt('Iteration count')
+for (i = 0; iCount-- > 0; i++ ) {
+    if (iCount===null) break;
+    console.log('Iteration');
+}
+
+
+
+ //Запросить у пользователя значение, кратное которому будут выводиться числа - вывести их в консоль с помощью while
+ var num  = +prompt('enter value');
+ var rezult; 
+ var i = 0;
+ while (++i <= 100){
+  if (rezult = (num * i) ){
+    console.log(rezult);
+  }
+}
+
+ 
+   //Запросить у пользователя значение, кратное которому будут выводиться числа - вывести их в консоль с помощью do/while
+   var num  = +prompt('enter value');
+   var rezult; 
+   var i = 0;
+   do{
+   
+     if ( rezult = (num * i)) {
+        console.log(rezult);
+      }
+   } while (++i <= 100);
+  //Запросить у пользователя значение, кратное которому будут выводиться числа - вывести их в консоль с помощью for
+  var num = +prompt ('enter value');
+  var rezult;
+  for(var i = 0; ++i <= 100; i++){
+    console.log(rezult = (num * i));
+}
+
+//(Усложняем) Кроме кратного запросить количество чисел, которые следует вывести с помощью while
+
+var num  = +prompt('enter value');
+var quantity = +prompt ('how many?')
+var rezult; 
+var i = 0;
+ while (++i <= quantity){
+  if (rezult = (num * i) ){
+    console.log(rezult);
+  }
+}
+//(Усложняем) Кроме кратного запросить количество чисел, которые следует вывести с помощью for
+
+var result;
+var num = +prompt('enter value');
+var quantity = +prompt("how many?"); 
+	for (var i = 1; ++i <= ++quantity; i++) {
+		console.log(result=num * i);
+	}
+
+
