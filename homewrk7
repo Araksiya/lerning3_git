@@ -1,0 +1,60 @@
+var alphabet = "abcdefghijklmnopqrstuvwxyz"; 
+var words = +prompt ('Enter word count');
+ if (Number.isNaN(words) || words > 10 || words <= 0){
+    while (Number.isNaN(words) || words > 10 || words <= 0) { 
+        alert("Enter the number of words you want to receive. Enter the NUMBER FROM 1 TO 10")
+        words = +prompt("Enter word count");
+    }
+}
+var minLetter = +prompt ('Enter the minimum number of words');
+
+if (Number.isNaN(minLetter) || minLetter > 10 || minLetter <= 0){
+    while (Number.isNaN(minLetter) || minLetter > 10 || minLetter <= 0) { 
+        alert("Enter the minimum number of words from 1 to 10")
+        minLetter = +prompt("Enter the minimum number of words from 1 to 10");
+    }
+}
+
+var maxLetter = +prompt ('enter the maximum number of words from 0 to 10');
+
+if (Number.isNaN(maxLetter) || maxLetter > 10 ||maxLetter  <= 0){
+    while (Number.isNaN(maxLetter) || maxLetter > 10 || maxLetter <= 0) { 
+        alert("Enter the maximum number of words from 1 to 10")
+        maxLetter  = +prompt("Enter the maximum number of words from 1 to 10");
+    }
+}
+
+var finalArr = [];
+var alphabet = alphabet.split("");
+
+for (var i = 0; i < words; i++) {
+    var currChars = Math.floor(Math.random() * (maxLetter - minLetter)) + minLetter;
+    var shuffled = alphabet.sort(function() {
+        return 0.5 - Math.random();
+    });
+    var currWord = shuffled.slice(0, currChars);
+    currWord = currWord.join("");
+    finalArr.push(currWord);
+  };
+  
+  console.log(finalArr);
+
+
+  var keepVal = {};
+
+  for(var i = 0; i < finalArr.length; i++) {
+    var currLength = ("" + finalArr[i]).length;
+    if(!(keepVal.hasOwnProperty(currLength))) {
+      keepVal[currLength] = new Array; 
+    }
+    keepVal[currLength].push(finalArr[i]);
+  };
+  
+  console.log(keepVal);
+  
+  var keepLength = 0;
+  
+  for (key in keepVal) {
+    var Arrlength = keepVal[key].length;
+    console.log("was added " + Arrlength + " words with " + key + " characters ");
+  }
