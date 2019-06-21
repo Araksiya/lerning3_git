@@ -1,0 +1,56 @@
+Переписать ф-ю обмена валюты, в которой принимаются 2 аргумента from, to -> exchange(from, to)
+
+var from = prompt( 'Enter amount of money', '' );
+   var value = prompt( 'UAH-USD or UAH-EUR', '' );
+   var dol = 26;
+   var evro = 30;
+   if ( value === 'UAH-USD' ) {
+    console.log(exchange(from,dol));
+}  else if ( value === 'UAH-EUR') {
+    console.log(exchange(from,evro));
+}  else {
+    console.log("cancel")
+}
+function  exchange(from, to) {
+     return +from / +parseFloat(to);
+};
+////////////////////////////////////////////////////////////////////////////////////////////////
+Написать ф-ю, которая будет принимать сумму, которую вы бы хотели вложить в банк, второй аргумент -
+процентная ставка, третий - количество лет. Функция возвращает сумму, которую вы получите по истечению
+введенного времени с этого банка.
+
+var money = +prompt ('How many money up to 50000');
+var years = +prompt ('How many years up to 20'); 
+var percent = 10;
+ i = 0;
+if ( money <= 50000) {
+ } if (years <= 20){
+ }
+function deposit (money, years, percent){
+           i = percent/100 * money * years + money;
+           return i; 
+        }
+    
+console.log(deposit(money ,years , percent));
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+Самостоятельно переписать ф-ю вывода рандомного кол-ва рандомных слов
+
+var str = "abcdefghijklmnopqrstuvwxyz"; 
+ function rand(min, max){
+     return Math.round(Math.random() * (max + min)) - min;
+ }
+ function roar(lettersCount) {
+     var newWord = "";
+     lettersCount = lettersCount || 0;
+     for(var letterIteration = lettersCount;
+        letterIteration>0;
+        letterIteration--) {
+            var letterIndex = Math.round(Math.random() * (str.length-1));
+            newWord+=str[letterIndex]
+        }
+  return newWord;
+    }
+    function randString() {
+        return roar (rand (0,100) );
+    }
+console.log(randString (roar));
