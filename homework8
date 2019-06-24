@@ -1,0 +1,53 @@
+//Самостоятельно переписать метод перебора массивa every.
+
+var numbers = [1, 5, -10, 7, -1, 8];
+var allPos = numbers.every(function(item){
+    return item >= 0;
+});
+console.log(allPos); 
+//////////////////////////////////////////////////////////////
+var numbers = [1, 5, -10, 7, -1, 8];
+var allPos = true;
+for (i = 0; i < numbers.length; i++){
+    if(numbers[i] < 0){
+        allPos = false;
+        break;
+    }
+}
+console.log(allPos); 
+
+
+//Самостоятельно переписать метод перебора массивa some.
+var numbers = [1, 5, -10, 7, -1, 8];
+var hasNeg = numbers.some(function(item){
+    return item < 0;
+})
+
+console.log(hasNeg);
+////////////////////////////////////////////////////////////////
+var numbers = [1, 5, -10, 7, -1, 8];
+var hasNeg = false;
+for (i = 0; i < numbers.length; i++){
+    if(numbers[i] < 0){
+        hasNeg = true;
+        break;
+    }
+}
+console.log(hasNeg);
+
+
+//(Усложняем) Переписать метод reduce
+var numbers = [1, 5, 8, -2, 8, -3];
+var sum = numbers.reduce( function(total,item){
+       
+         return total + item;
+}, 0);
+console.log(sum);
+////////////////////////////////////////////////////////////////
+var numbers = [1, 5, 8, -2, 8, -3];
+var sum = 0;
+for( i = 0; i < numbers.length; i++){
+    sum += numbers[i];
+}
+console.log (sum);
+
